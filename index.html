@@ -9,7 +9,22 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-  
-        <script src="" async defer></script>
+
+        <script>
+            //ESTABLISH THE COMPUTERS CHOICE
+            //Create an array of choices
+            let choices = ['Rock','Paper','Scissors'];
+
+            // Choose between the values in the array- This should run at the beginning of each round.
+            function getComputerChoice(choices){
+
+                computerChoice = Math.floor(Math.random()*choices.length);
+                
+            }
+
+            console.log(choices)
+            console.log(getComputerChoice(choices.toString));
+        </script>
+
     </body>
 </html>
