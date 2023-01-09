@@ -11,19 +11,19 @@
     <body>
 
         <script>
-            //ESTABLISH THE COMPUTERS CHOICE
-            //Create an array of choices
-            let choices = ['Rock','Paper','Scissors'];
+            // 1. Get a Throw for the computer. 
+                // This will use an array for the choices and then select one at random from said array.
 
-            // Choose between the values in the array- This should run at the beginning of each round.
-            function getComputerChoice(choices){
+            let choices = ["Rock", "Paper", "Scissors"]; // The array of choices.
+            
+            let getComputerChoice = Math.floor(Math.random() * choices.length); // Selects a random array position
 
-                computerChoice = Math.floor(Math.random()*choices.length);
-                
-            }
+            let computerThrow = choices.at(getComputerChoice);
 
-            console.log(choices)
-            console.log(getComputerChoice(choices.toString));
+            console.log(choices);
+            console.log(getComputerChoice);
+            console.log(computerThrow);
+
         </script>
 
     </body>
