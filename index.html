@@ -16,12 +16,12 @@
 
             let choices = ["Rock", "Paper", "Scissors"]; // The array of choices.
             
-            let getComputerChoice = Math.floor(Math.random() * choices.length); // Selects a random array position
+            //let getComputerChoice = Math.floor(Math.random() * choices.length); // Selects a random array position
 
-            let computerThrow = choices.at(getComputerChoice);
+            let computerThrow = choices.at(Math.floor(Math.random() * choices.length)); // Gets the string associated with the index position selected above
 
             console.log(choices);
-            console.log(getComputerChoice);
+            //console.log(getComputerChoice);
             console.log(computerThrow);
 
         </script>
