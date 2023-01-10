@@ -20,20 +20,22 @@
             
             function getComputerChoice(choices){
 
-                return choices.at(Math.floor(Math.random() * choices.length)); // Gets the string associated with the index position selected above
+                return choices.at(Math.floor(Math.random() * choices.length)).toLowerCase(); // Gets the string associated with the index position selected above
             }
 
-            let computerThrow = getComputerChoice(choices);
-
-            //2. Get the players throw by prompting for either Rock, Paper, Scissors.
+                        //2. Get the players throw by prompting for either Rock, Paper, Scissors.
                 // This will need to remove case
             
             function getPlayerChoice(choices){
-                return prompt("What will you throw " + choices).toLowerCase();
+
+                return prompt("What will you throw " + choices.at(0)+ ", " + choices.at(1) + ", or " +choices.at(2) + "?").toLowerCase(); //prompts the user for a selection from the choices array, and returns their choice as lower case.
+
             }
 
+            //3. Play a round using computer choice and player choice
+
             console.log(choices);
-            console.log(computerThrow);
+            console.log(getComputerChoice(choices));
             console.log(getPlayerChoice(choices));
 
         </script>
