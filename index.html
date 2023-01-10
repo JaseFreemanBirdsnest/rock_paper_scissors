@@ -33,47 +33,63 @@
             }
 
             //3. Play a round using computer choice and player choice
-            function playRound(getComputerChoice, getPlayerChoice){
+            function playRound(playerThrow, computerThrow){
 
                 //  win / lose condition alerts that only needs to be written once
-                let winAlert = ("You Win! " + getPlayerChoice + " beats" + getComputerChoice);
-                let loseAlert = ("You Lose!!" + getComputerChoice + " beats" + getPlayerChoice);
+                let winAlert = ("You Win! " + playerThrow + " beats " + computerThrow);
+                let loseAlert = ("You Lose!! " + computerThrow + " beats " + playerThrow);
 
                 //Tie Condition i.e Computer and Player both choose the same
-                if (getComputerChoice == getPlayerChoice){
-                    alert("Its a Tie");
+                if (computerThrow == playerThrow){
+                    return alert("Its a Tie");
                 }
                 //Rock breaks Scissors
                 //if getComputerChoice == "rock" && getPlayerChoice == "scissors"
                     // loseAlert
-                else if(getComputerChoice == "rock" && getPlayerChoice == "paper"){
-                    alert(loseAlert);
+                else if(computerThrow == "rock" && playerThrow == "scissors"){
+                    return alert(loseAlert);
                 }
                 //if getPlayerChoice == "rock"&& getComputerChoice == "scissors"
                     //WinAlert
-                else if( getPlayerChoice == "rock" && getComputerChoice == "scissors"){
-                    alert(winAlert);
+                else if( playerThrow == "rock" && computerThrow == "scissors"){
+                    return alert(winAlert);
                 }
 
                 //Scissors cut Paper
                     //if getComputerChoice == "scissors" && getPlayerChoice == "paper"
                         // loseAlert
+                else if(computerThrow == "scissors" && playerThrow == "paper"){
+                    return alert(loseAlert);
+                }
                     //if getPlayerChoice == "scissors"&& getComputerChoice == "paper"
                         //WinAlert
-
+                else if( playerThrow == "scissors" && computerThrow == "paper"){
+                    return alert(winAlert);
+                }
                 //Paper wraps Rock
                     //if getComputerChoice == "paper" && getPlayerChoice == "rock"
                         // loseAlert
+                else if(computerThrow == "paper" && playerThrow == "rock"){
+                    return alert(loseAlert);
+                }
                     //if getPlayerChoice == "paper"&& getComputerChoice == "rock"
                         //WinAlert
+                else if( playerThrow == "paper" && computerThrow == "rock"){
+                    return alert(winAlert);
+                }
             }
 
             
             console.log(choices);
-            console.log(getComputerChoice(choices));
-            console.log(getPlayerChoice(choices));
+            //console.log(getComputerChoice(choices));
+            //console.log(getPlayerChoice(choices));
 
-            playRound(getComputerChoice(choices),getPlayerChoice(choices));
+            const playerThrow = getPlayerChoice(choices);
+            const computerThrow = getComputerChoice(choices);
+
+            playRound(playerThrow,computerThrow);
+
+            console.log("Player threw " + playerThrow, "Computer threw " + computerThrow);
 
         </script>
 
