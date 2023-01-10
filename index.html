@@ -19,15 +19,22 @@
             //let getComputerChoice = Math.floor(Math.random() * choices.length); // Selects a random array position
             
             function getComputerChoice(choices){
-                
+
                 return choices.at(Math.floor(Math.random() * choices.length)); // Gets the string associated with the index position selected above
             }
 
             let computerThrow = getComputerChoice(choices);
 
+            //2. Get the players throw by prompting for either Rock, Paper, Scissors.
+                // This will need to remove case
+            
+            function getPlayerChoice(choices){
+                return prompt("What will you throw" + choices)
+            }
+
             console.log(choices);
-            //console.log(getComputerChoice);
             console.log(computerThrow);
+            console.log(getPlayerChoice(choices));
 
         </script>
 
