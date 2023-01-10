@@ -17,8 +17,13 @@
             let choices = ["Rock", "Paper", "Scissors"]; // The array of choices.
             
             //let getComputerChoice = Math.floor(Math.random() * choices.length); // Selects a random array position
+            
+            function getComputerChoice(choices){
+                
+                return choices.at(Math.floor(Math.random() * choices.length)); // Gets the string associated with the index position selected above
+            }
 
-            let computerThrow = choices.at(Math.floor(Math.random() * choices.length)); // Gets the string associated with the index position selected above
+            let computerThrow = getComputerChoice(choices);
 
             console.log(choices);
             //console.log(getComputerChoice);
