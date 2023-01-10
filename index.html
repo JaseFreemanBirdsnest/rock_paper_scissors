@@ -33,10 +33,47 @@
             }
 
             //3. Play a round using computer choice and player choice
+            function playRound(getComputerChoice, getPlayerChoice){
 
+                //  win / lose condition alerts that only needs to be written once
+                let winAlert = ("You Win! " + getPlayerChoice + " beats" + getComputerChoice);
+                let loseAlert = ("You Lose!!" + getComputerChoice + " beats" + getPlayerChoice);
+
+                //Tie Condition i.e Computer and Player both choose the same
+                if (getComputerChoice == getPlayerChoice){
+                    alert("Its a Tie");
+                }
+                //Rock breaks Scissors
+                //if getComputerChoice == "rock" && getPlayerChoice == "scissors"
+                    // loseAlert
+                else if(getComputerChoice == "rock" && getPlayerChoice == "paper"){
+                    alert(loseAlert);
+                }
+                //if getPlayerChoice == "rock"&& getComputerChoice == "scissors"
+                    //WinAlert
+                else if( getPlayerChoice == "rock" && getComputerChoice == "scissors"){
+                    alert(winAlert);
+                }
+
+                //Scissors cut Paper
+                    //if getComputerChoice == "scissors" && getPlayerChoice == "paper"
+                        // loseAlert
+                    //if getPlayerChoice == "scissors"&& getComputerChoice == "paper"
+                        //WinAlert
+
+                //Paper wraps Rock
+                    //if getComputerChoice == "paper" && getPlayerChoice == "rock"
+                        // loseAlert
+                    //if getPlayerChoice == "paper"&& getComputerChoice == "rock"
+                        //WinAlert
+            }
+
+            
             console.log(choices);
             console.log(getComputerChoice(choices));
             console.log(getPlayerChoice(choices));
+
+            playRound(getComputerChoice(choices),getPlayerChoice(choices));
 
         </script>
 
