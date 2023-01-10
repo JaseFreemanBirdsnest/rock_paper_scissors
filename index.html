@@ -35,6 +35,8 @@
             //3. Play a round using computer choice and player choice
             function playRound(playerThrow, computerThrow){
 
+
+
                 //  win / lose condition alerts that only needs to be written once
                 let winAlert = ("You Win! " + playerThrow + " beats " + computerThrow);
                 let loseAlert = ("You Lose!! " + computerThrow + " beats " + playerThrow);
@@ -47,11 +49,13 @@
                 //if getComputerChoice == "rock" && getPlayerChoice == "scissors"
                     // loseAlert
                 else if(computerThrow == "rock" && playerThrow == "scissors"){
+                    computerScore++;
                     return alert(loseAlert);
                 }
                 //if getPlayerChoice == "rock"&& getComputerChoice == "scissors"
                     //WinAlert
                 else if( playerThrow == "rock" && computerThrow == "scissors"){
+                    playerScore++;
                     return alert(winAlert);
                 }
 
@@ -59,24 +63,41 @@
                     //if getComputerChoice == "scissors" && getPlayerChoice == "paper"
                         // loseAlert
                 else if(computerThrow == "scissors" && playerThrow == "paper"){
+                    computerScore++;
                     return alert(loseAlert);
                 }
                     //if getPlayerChoice == "scissors"&& getComputerChoice == "paper"
                         //WinAlert
                 else if( playerThrow == "scissors" && computerThrow == "paper"){
+                    playerScore++;
                     return alert(winAlert);
                 }
                 //Paper wraps Rock
                     //if getComputerChoice == "paper" && getPlayerChoice == "rock"
                         // loseAlert
                 else if(computerThrow == "paper" && playerThrow == "rock"){
+                    computerScore++;
                     return alert(loseAlert);
                 }
                     //if getPlayerChoice == "paper"&& getComputerChoice == "rock"
                         //WinAlert
                 else if( playerThrow == "paper" && computerThrow == "rock"){
+                    playerScore++;
                     return alert(winAlert);
                 }
+            }
+
+            function game(){
+                let playerScore = 0
+                let computerScore = 0
+                for(rounds = 0; rounds = 5; rounds++){
+                    playRound(playerThrow,computerThrow);
+                    console.log("Player threw " + playerThrow, "Computer threw " + computerThrow);                    
+                }
+                if (playerScore < ComputerScore){
+                    alert("You Lost this Match");
+                }
+                else alert("You Won this Match!");
             }
 
             
@@ -87,7 +108,9 @@
             const playerThrow = getPlayerChoice(choices);
             const computerThrow = getComputerChoice(choices);
 
-            playRound(playerThrow,computerThrow);
+            //playRound(playerThrow,computerThrow);
+
+            game();
 
             console.log("Player threw " + playerThrow, "Computer threw " + computerThrow);
 
