@@ -32,8 +32,20 @@
 
             }
 
+           
+
+
             //3. Play a round using computer choice and player choice
             function playRound(playerThrow, computerThrow){
+
+            var playerScore = 0
+            var computerScore = 0
+
+            //get computer choice and set for this round
+            var computerThrow = getComputerChoice(choices);
+            //get players choice and set for this round
+            var playerThrow = getPlayerChoice(choices);
+
 
 
 
@@ -47,69 +59,60 @@
                 }
                 //Rock breaks Scissors
                 //if getComputerChoice == "rock" && getPlayerChoice == "scissors"
-                    // loseAlert
+
                 else if(computerThrow == "rock" && playerThrow == "scissors"){
                     computerScore++;
                     return alert(loseAlert);
                 }
                 //if getPlayerChoice == "rock"&& getComputerChoice == "scissors"
-                    //WinAlert
+                   
                 else if( playerThrow == "rock" && computerThrow == "scissors"){
                     playerScore++;
                     return alert(winAlert);
                 }
-
                 //Scissors cut Paper
                     //if getComputerChoice == "scissors" && getPlayerChoice == "paper"
-                        // loseAlert
+                        
                 else if(computerThrow == "scissors" && playerThrow == "paper"){
                     computerScore++;
                     return alert(loseAlert);
                 }
                     //if getPlayerChoice == "scissors"&& getComputerChoice == "paper"
-                        //WinAlert
+                        
                 else if( playerThrow == "scissors" && computerThrow == "paper"){
                     playerScore++;
                     return alert(winAlert);
                 }
                 //Paper wraps Rock
                     //if getComputerChoice == "paper" && getPlayerChoice == "rock"
-                        // loseAlert
+                        
                 else if(computerThrow == "paper" && playerThrow == "rock"){
                     computerScore++;
                     return alert(loseAlert);
                 }
                     //if getPlayerChoice == "paper"&& getComputerChoice == "rock"
-                        //WinAlert
+                        
                 else if( playerThrow == "paper" && computerThrow == "rock"){
                     playerScore++;
                     return alert(winAlert);
                 }
             }
 
-            function game(){
-                let playerScore = 0
-                let computerScore = 0
-                for(rounds = 0; rounds = 5; rounds++){
-                    playRound(playerThrow,computerThrow);
-                    console.log("Player threw " + playerThrow, "Computer threw " + computerThrow);                    
+            function game(){      
+            //create computer choice varible
+            var computerThrow;
+            //create players choice varible
+            var playerThrow;          
+  
+                for(let rounds = 0; rounds = 5; rounds++){
+                    playRound(playerThrow,computerThrow);                   
                 }
-                if (playerScore < computerScore){
-                    alert("You Lost this Match");
-                }
-                else alert("You Won this Match!");
+               
             }
 
             
             console.log(choices);
-            //console.log(getComputerChoice(choices));
-            //console.log(getPlayerChoice(choices));
-
-            const playerThrow = getPlayerChoice(choices);
-            const computerThrow = getComputerChoice(choices);
-
-            //playRound(playerThrow,computerThrow);
-
+      
             game();
 
             console.log("Player threw " + playerThrow, "Computer threw " + computerThrow);
