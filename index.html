@@ -122,10 +122,13 @@
                     console.log(results);               
                 }
                
+                //Still not 100% sure I follow how the below ternary function work, I found the basis for this on StackOverflow, and adapted it to suit my needs.
+                //The combination of the array.reduce method, with the ternary statement is quite confusing. 
+                //regardless
                 let scores = results.reduce(function (count, currentValue){
                     return (count[currentValue] ? ++count[currentValue] : (count[currentValue]=1),count);
                 },
-                {});
+                );
                 
                 let finalPlayerScore = scores["Player"];
                 let finalComputerScore = scores["Computer"];
