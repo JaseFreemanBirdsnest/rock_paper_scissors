@@ -124,15 +124,17 @@
                
                 //Still not 100% sure I follow how the below ternary function work, I found the basis for this on StackOverflow, and adapted it to suit my needs.
                 //The combination of the array.reduce method, with the ternary statement is quite confusing. 
-                //regardless
+                //regardless the below iterates through the results array counting the instances of each in the array, and storing it in the scores object.
                 let scores = results.reduce(function (count, currentValue){
                     return (count[currentValue] ? ++count[currentValue] : (count[currentValue]=1),count);
                 },
                 );
                 
+                // gets the scores for each player from the scores object
                 let finalPlayerScore = scores["Player"];
                 let finalComputerScore = scores["Computer"];
 
+                //determins wins the match.
                 if (finalPlayerScore > finalComputerScore){
                     return alert("Congratulations you won the match!");
                 }
