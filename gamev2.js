@@ -2,7 +2,7 @@ const choiceButtons = document.querySelectorAll('[data-choice]')
 const playerScore = document.querySelector('[data-playerScore]')
 const computerScore =  document.querySelector('[data-computerScore]')
 const resetScores = document.querySelector('[data-reset]')
-
+let numberOfClicks = 0
 
 const CHOICEBEATS = [
     {
@@ -24,6 +24,7 @@ choiceButtons.forEach(choiceButton => {
     choiceButton.addEventListener('click', e => {
         const playerSelection = choiceButton.dataset.choice
         const playerChoice = CHOICEBEATS.find(choice => choice.throw === playerSelection)
+        numberOfClicks = numberOfClicks +1
         getSelection(playerChoice)
     })
 })
@@ -46,6 +47,11 @@ function getSelection(playerChoice) {
     console.log(computerChoice)
     console.log(playerWinsRound)
     console.log(compWinsRound)
+    console.log(numberOfClicks)
+    console.log(playerScore.innerText)
+    console.log(computerScore.innerText)
+
+    if (numberOfClicks === 5) whoWins()
 }
 
 function isroundWinner(playerChoice, computerThrow) {
@@ -62,8 +68,19 @@ function showScores(score){
 
 }
 
-function playMatch(){
+function whoWins(){
+    if (parseInt(playerScore.innerText) === parseInt(computerScore.innerText)){
+        alert("It's a Tie")
+    }
+    
+    if (parseInt(playerScore.innerText) > parseInt(computerScore.innerText)){
+            alert("You Win!, Congratulations")
+    }
+    else {
+        alert("Computer Wins, Try Again")
+    }
 
+    resetScoresToZero()
 }
 
 function resetScoresToZero(){
