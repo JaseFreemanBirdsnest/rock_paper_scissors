@@ -1,6 +1,7 @@
 const choiceButtons = document.querySelectorAll('[data-choice]')
-const playerScore = document.querySelector('[data-playerScore')
-const computerScore =  document.querySelector('[data-computerScore')
+const playerScore = document.querySelector('[data-playerScore]')
+const computerScore =  document.querySelector('[data-computerScore]')
+const resetScores = document.querySelector('[data-reset]')
 
 
 const CHOICEBEATS = [
@@ -27,6 +28,10 @@ choiceButtons.forEach(choiceButton => {
     })
 })
 
+resetScores.addEventListener('click', e => {
+    resetScoresToZero() 
+})
+
 function getSelection(playerChoice) {
     const computerChoice = randomChoice()
     const playerWinsRound = isroundWinner(playerChoice, computerChoice)
@@ -34,6 +39,8 @@ function getSelection(playerChoice) {
 
     if (playerWinsRound) showScores(playerScore)
     if (compWinsRound) showScores(computerScore)
+
+    
 
     console.log(playerChoice)
     console.log(computerChoice)
@@ -57,6 +64,11 @@ function showScores(score){
 
 function playMatch(){
 
+}
+
+function resetScoresToZero(){
+    playerScore.innerText = 0
+    computerScore.innerText = 0
 }
 
 
